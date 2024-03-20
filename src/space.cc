@@ -141,8 +141,6 @@ Intersection Space3D::Intersect(const Segment3D &seg_first,
     // Условие пересечения: 0 <= t <= 1, 0 <= s <= 1
     auto t_s = KramersMethod(seg_first.GetLine(), seg_second.GetLine());
     if((t_s.first >= 0 && t_s.first <= 1) && (t_s.second >= 0 && t_s.second <= 1)) {
-      Point new_vec = Point(seg_first.GetStart() + guide_first*t_s.first);
-      new_vec == guide_first;
       result = std::make_pair(Point(seg_first.GetStart() + guide_first*t_s.first), true);
     }
   }
